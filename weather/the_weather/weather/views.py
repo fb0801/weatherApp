@@ -11,8 +11,10 @@ def index(request):
     url ='https://api.openweathermap.org/data/2.5/weather?q={}&appid='
     city = "London"
 
+    #adds what user entered into the current form and save it
     if request.method == 'POST':
-        pass
+        form = CityForm(request.POST)
+        form.save()
 
     form = CityForm()
 

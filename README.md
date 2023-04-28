@@ -14,5 +14,7 @@ https://realpython.com/django-setup/
 
 https://docs.djangoproject.com/en/4.2/intro/tutorial01/
 
+https://openweathermap.org/current#parameter
+
 
 credit to https://github.com/PrettyPrinted/weather_app_django_scotch whos FreeCodeCamp video was used to create this application
