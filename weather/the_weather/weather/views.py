@@ -4,17 +4,19 @@ import requests
 # Create your views here.
 
 def index(request):
-    url = "https://api.openweathermap.org/data/2.5/weather?={}&units=metric&appid="
+    #url = "https://api.openweathermap.org/data/2.5/weather?={}&units=metric&appid="
+    #url = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid='
+    url ='https://api.openweathermap.org/data/2.5/weather?q={}&appid='
     city = "London"
 
     r = requests.get(url.format(city)).json()
 
     city_weather = {
-    'city': ,
-    'temperature': '',
-    'description': '',
-    'icon':,
+    'city': city,
+    'temperature': r['main']['temp'],
+    'description': r['weather'][0]['description'],
+    'icon':r['weather'][0]['icon'],
 
     }
-
-    return render(request, 'weather/weather.html')
+    context = {'city_weather': city_weather}
+    return render(request, 'weather/weather.html', context)
